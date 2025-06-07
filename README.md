@@ -1,8 +1,8 @@
 ### Flashcard app
 - This is a simple flashcard application mainly made to understand the API implementation on golang
 - I have implemented multiple paths for different operations in this
-- POST /card : will add a flashcard
-- GET /quiz : will randmonly get a flashcard's question 
+- `POST /card` : will add a flashcard
+- `GET /quiz` : will randmonly get a flashcard's question 
 
 
 ## How to run the application
