@@ -29,7 +29,6 @@ func main() {
 	http.HandleFunc("/quiz", randomCardGenerator)
 	fmt.Println("Server started on :8080")
 	http.ListenAndServe(":8080", nil)
-
 }
 
 func addCard(w http.ResponseWriter, r *http.Request) {
@@ -47,7 +46,7 @@ func addCard(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(card)
 		return
 	} else {
-		fmt.Fprintln(w, "Wrong method used", http.StatusMethodNotAllowed)
+		http.Error(w, "Wrong method used", http.StatusMethodNotAllowed)
 		return
 	}
 }

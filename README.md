@@ -12,8 +12,8 @@
 
 - Example usecase for adding a card:
 ```bash
-curl -X POST \
--d {"Question":"Who is the Prime Minister of India","Answer":"Narendra Modi"} \
+curl -X POST \                                                                              
+-d '{"question":"What is your name?","Answer":"vishal"}' \
 localhost:8080/card
 ```
 - Example usecase for getting a random card:
