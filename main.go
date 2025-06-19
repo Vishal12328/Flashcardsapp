@@ -30,7 +30,6 @@ func main() {
 	fmt.Println("Server started on :8080")
 	http.ListenAndServe(":8080", nil)
 }
-
 func addCard(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		var card Flashcard
@@ -50,12 +49,13 @@ func addCard(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
 func randomCardGenerator(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodGet {
 		var rng = rand.New(rand.NewSource(time.Now().UnixNano()))
 		randomNumber := rng.Intn(len(Flashcards))
 		if len(Flashcards) == 0 {
-			fmt.Fprintf(w, "Please add any flashcards before trying to access them.")
+			fmt.Fprintf(w, "Please add any flashcard before trying to access them.")
 			return
 		}
 		randomcard := Flashcards[randomNumber]
